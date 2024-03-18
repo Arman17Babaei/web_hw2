@@ -1,7 +1,6 @@
 package edu.webclass.restapi.Product.Management.System.repository;
 
 import edu.webclass.restapi.Product.Management.System.models.Product;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,5 +27,12 @@ public class ProductRepository {
 
     public List<Product> findAllProducts() {
         return products;
+    }
+
+    public Product getProduct(String id) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) return product;
+        }
+        return null;
     }
 }

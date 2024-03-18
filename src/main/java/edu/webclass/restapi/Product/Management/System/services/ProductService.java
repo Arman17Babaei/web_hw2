@@ -22,4 +22,7 @@ public class ProductService {
     }
 
 
+    public Product getProduct(String id) {
+        return productRepository.getProduct(id);
+    }
 }
